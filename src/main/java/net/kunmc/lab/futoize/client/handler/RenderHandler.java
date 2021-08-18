@@ -11,7 +11,7 @@ public class RenderHandler {
     public static void onLivingRenderPre(RenderLivingEvent.Pre e) {
         MatrixStack matrix = e.getMatrixStack();
         matrix.pushPose();
-        float sc = SizeChanger.INSTANCE.getSize(e.getEntity());
+        float sc = SizeChanger.getInstance().getSize(e.getEntity());
         matrix.scale(sc, sc, sc);
     }
 
