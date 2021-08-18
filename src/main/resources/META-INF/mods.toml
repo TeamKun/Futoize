@@ -1,0 +1,10 @@
+modLoader = "javafml"
+loaderVersion = "[36,)"
+license = "MIT License"
+[[mods]]
+modId = "futoize"
+version = "${file.jarVersion}"
+displayName = "Futoize"
+credits = "KUN Dev Lab"
+authors = "MORIMORI0317"
+description = '''MOBの大きさが太すぎるッピ！'''

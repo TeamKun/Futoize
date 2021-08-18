@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.kunmc.lab.futoize.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "futoize.refmap.json",
+  "mixins": [
+    "EntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
