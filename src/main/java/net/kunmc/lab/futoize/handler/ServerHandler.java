@@ -1,7 +1,6 @@
 package net.kunmc.lab.futoize.handler;
 
 import net.kunmc.lab.futoize.SizeChanger;
-import net.minecraft.entity.EntitySize;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -11,6 +10,6 @@ public class ServerHandler {
         float sc = SizeChanger.getInstance().getSize(e.getEntity());
         //  e.setNewEyeHeight(e.getOldEyeHeight() * sc);
 
-       // e.setNewSize(new EntitySize(e.getOldSize().width * sc, e.getOldSize().height * sc * 0.75f, e.getOldSize().fixed), true);
+        // e.setNewSize(new EntitySize(e.getOldSize().width * sc, e.getOldSize().height * sc * 0.75f, e.getOldSize().fixed), true);
     }
 }

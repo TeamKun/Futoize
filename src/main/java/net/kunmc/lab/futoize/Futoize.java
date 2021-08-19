@@ -10,8 +10,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("futoize")
+@Mod(Futoize.MODID)
 public class Futoize {
+    public static final String MODID = "futoize";
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Futoize() {
@@ -22,7 +23,7 @@ public class Futoize {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-
+        ServerConfig.init();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

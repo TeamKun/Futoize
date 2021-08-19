@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class SizeChanger {
     private static final SizeChanger INSTANCE = new SizeChanger();
-    private float currentSize = 3;
+    private float currentSize = 10;
 
     public static SizeChanger getInstance() {
         return INSTANCE;
