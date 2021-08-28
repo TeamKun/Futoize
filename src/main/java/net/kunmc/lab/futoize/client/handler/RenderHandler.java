@@ -1,7 +1,7 @@
 package net.kunmc.lab.futoize.client.handler;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import net.kunmc.lab.futoize.SizeChanger;
+import net.kunmc.lab.futoize.data.SizeChangerManager;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -11,7 +11,7 @@ public class RenderHandler {
     public static void onLivingRenderPre(RenderLivingEvent.Pre e) {
         MatrixStack matrix = e.getMatrixStack();
         matrix.pushPose();
-        float sc = SizeChanger.getInstance().getSize(e.getEntity());
+        float sc = SizeChangerManager.getInstance().getSize(e.getEntity());
         matrix.scale(sc, sc, sc);
     }
 

@@ -2,6 +2,7 @@ package net.kunmc.lab.futoize;
 
 import net.kunmc.lab.futoize.client.handler.RenderHandler;
 import net.kunmc.lab.futoize.handler.ServerHandler;
+import net.kunmc.lab.futoize.packet.PacketHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,6 +24,7 @@ public class Futoize {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        PacketHandler.init();
         ServerConfig.init();
     }
 

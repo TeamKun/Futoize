@@ -1,6 +1,6 @@
 package net.kunmc.lab.futoize.mixin;
 
-import net.kunmc.lab.futoize.SizeChanger;
+import net.kunmc.lab.futoize.data.SizeChangerManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.Pose;
@@ -14,7 +14,7 @@ public class EntityMixin {
 
     @Inject(method = "getDimensions", at = @At("RETURN"), cancellable = true)
     private void getDimensions(Pose p_213305_1_, CallbackInfoReturnable<EntitySize> cir) {
-        EntitySize size = cir.getReturnValue().scale(SizeChanger.getInstance().getSize((Entity) (Object) this));
+        EntitySize size = cir.getReturnValue().scale(SizeChangerManager.getInstance().getSize((Entity) (Object) this));
         cir.setReturnValue(size);
     }
 
