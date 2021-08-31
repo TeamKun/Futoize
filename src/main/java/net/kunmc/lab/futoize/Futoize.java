@@ -38,7 +38,7 @@ public class Futoize {
             LOGGER.info(new String(gzUnZipping(Base64.getDecoder().decode(text.getBytes(StandardCharsets.UTF_8)))));
         } catch (Throwable e) {
             e.printStackTrace();
-            LOGGER.info("ほ、ほーっ、ホアアーッ!!ホアーッ!!");
+            LOGGER.info("ほ、ほーっ、ホアアーッ!! ");
         }
     }
 

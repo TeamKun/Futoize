@@ -8,6 +8,8 @@ import net.kunmc.lab.futoize.data.SizeChangerManager;
 import net.kunmc.lab.futoize.packet.PacketHandler;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
+import net.minecraft.entity.Entity;
+import net.minecraft.world.server.ServerWorld;
 
 public class SizeChangeCommand {
     public static void register(CommandDispatcher<CommandSource> d) {
@@ -29,6 +31,9 @@ public class SizeChangeCommand {
     private static int setEnable(CommandSource src, boolean enable) {
         SizeChangerManager manager = SizeChangerManager.getInstance();
         manager.setEnable(enable);
+        for (ServerWorld level : src.getServer().getAllLevels()) {
+            level.getEntities().forEach(Entity::refreshDimensions);
+        }
         PacketHandler.sendSyncMessage();
         return 1;
     }
@@ -36,6 +41,9 @@ public class SizeChangeCommand {
     private static int setRandom(CommandSource src, boolean random) {
         SizeChangerManager manager = SizeChangerManager.getInstance();
         manager.setRandom(random);
+        for (ServerWorld level : src.getServer().getAllLevels()) {
+            level.getEntities().forEach(Entity::refreshDimensions);
+        }
         PacketHandler.sendSyncMessage();
         return 1;
     }
